@@ -55,4 +55,6 @@ RUN pip install pip tesserocr bpython --upgrade && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get purge -y --auto-remove gcc libffi-dev
 
+WORKDIR /code
+
 CMD /bin/bash
