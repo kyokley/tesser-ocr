@@ -8,7 +8,7 @@ Run:
 ```
 docker run --rm \
 		   -it \
-		   -v $(pwd):/code
+		   -v $(pwd):/code \
 		   tesser-ocr \
 		   /bin/bash
 ```
