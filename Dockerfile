@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y curl poppler-utils binutils \
                        # wget \
                        # tk8.5 tcl8.5 tk8.5-dev tcl8.5-dev
 
-RUN wget http://www.leptonica.com/source/leptonica-1.77.0.tar.gz && \
+RUN wget http://www.leptonica.org/source/leptonica-1.77.0.tar.gz && \
         tar -zxvf leptonica-1.77.0.tar.gz && \
         cd leptonica-1.77.0/ && \
         ./configure && \
@@ -50,7 +50,7 @@ RUN echo 'if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then \n\
           fi' >> ~/.bashrc
 
 # Set up virtual environment
-RUN pip install pip tesserocr bpython --upgrade && \
+RUN pip install pip tesserocr bpython pdfminer.six --upgrade && \
     apt-get install -y --no-install-recommends gcc libffi-dev libmagic1 && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get purge -y --auto-remove gcc libffi-dev
